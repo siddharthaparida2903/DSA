@@ -1,11 +1,14 @@
 class Solution:
-    def twoSum(self, nums, target):
-        hashmap = {}
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        prevMap = {}
 
-        for i, num in enumerate(nums):
-            complement = target - num
+        for i, n in enumerate(nums):
+            content = target - n
 
-            if complement in hashmap:
-                return [hashmap[complement], i]
+            if content in prevMap:
+                return [prevMap[content], i]
+            
+            prevMap[n] = i
 
-            hashmap[num] = i
+        return

@@ -7,13 +7,23 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         
-        # HASH SET METHOD
-        seen = set()
-        curr = head
+        # # HASH SET METHOD
+        # seen = set()
+        # curr = head
 
-        while curr:
-            if curr in seen:
+        # while curr:
+        #     if curr in seen:
+        #         return True
+        #     seen.add(curr)
+        #     curr = curr.next
+        # return False
+
+        # TORTOISE/HARE METHOD (SLOW/FAST TWO-POINTER)
+        slow, fast = head, head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
                 return True
-            seen.add(curr)
-            curr = curr.next
         return False

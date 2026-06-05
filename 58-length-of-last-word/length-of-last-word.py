@@ -5,5 +5,5 @@ class Solution(object):
         :rtype: int
         """
         words = s.split()
-        last_word = words[-1]
-        return len(last_word)
+        # last_word = words[-1]
+        return len(words[-1])

@@ -4,5 +4,5 @@ SELECT x, y, z,
         WHEN x + y > z AND x + z > y AND y + z > x
         THEN 'Yes'
         ELSE 'No'
-    END AS Triangle
+    END AS triangle
 FROM Triangle;
